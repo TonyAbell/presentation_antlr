@@ -46,6 +46,313 @@
 
 </section>
 
+<section >
+
+<section >
+
+<h3>Motivation</h3>
+
+<p>Manage meta data of Feeder SQL Tables</p>
+
+</section>
+
+<section author="Tony Abell" description="Introduction to ANTLR" theme="night" title="ANTLR" transition="default">
+
+<h2>Meta</h2>
+
+<ul>
+<li>Table Name</li>
+<li>Column Name</li>
+<li>Primary Key</li>
+<li>User ID</li>
+<li>Text Field</li>
+<li>Skip Column</li>
+</ul>
+
+</section>
+
+<section author="Tony Abell" description="Introduction to ANTLR" theme="night" title="ANTLR" transition="default">
+
+<h2>Example: Table | Column Name</h2>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="o">&#39;</span><span class="i">tableA&#39;</span>
+    <span class="i">columnA</span>
+    <span class="i">columnB</span>
+<span class="o">&#39;</span><span class="i">tableA&#39;</span>
+    <span class="i">columnA</span>
+    <span class="i">columnB</span>
+</pre>
+</td>
+</tr>
+</table>
+
+</section>
+
+<section author="Tony Abell" description="Introduction to ANTLR" theme="night" title="ANTLR" transition="default">
+
+<h2>Example: User ID</h2>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="o">&#39;</span><span class="i">tableA&#39;</span>
+    <span class="o">*</span><span class="i">columnA</span>
+    <span class="i">columnB</span>
+</pre>
+</td>
+</tr>
+</table>
+
+</section>
+
+<section author="Tony Abell" description="Introduction to ANTLR" theme="night" title="ANTLR" transition="default">
+
+<h2>Example: Text Field</h2>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="o">&#39;</span><span class="i">tableA&#39;</span>
+    <span class="o">^</span><span class="i">columnA</span>
+    <span class="i">columnB</span>
+</pre>
+</td>
+</tr>
+</table>
+
+</section>
+
+<section author="Tony Abell" description="Introduction to ANTLR" theme="night" title="ANTLR" transition="default">
+
+<h2>Example: Skip</h2>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="o">&#39;</span><span class="i">tableA&#39;</span>
+    <span class="o">!</span><span class="i">columnA</span>
+    <span class="i">columnB</span>
+</pre>
+</td>
+</tr>
+</table>
+
+</section>
+
+<section author="Tony Abell" description="Introduction to ANTLR" theme="night" title="ANTLR" transition="default">
+
+<h2>Example: Primary Key</h2>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="o">&#39;</span><span class="i">tableA&#39;</span>
+    <span class="o">@</span><span class="i">columnA</span>
+    <span class="i">columnB</span>
+</pre>
+</td>
+</tr>
+</table>
+
+</section>
+
+<section author="Tony Abell" description="Introduction to ANTLR" theme="night" title="ANTLR" transition="default">
+
+<h2>Example: All</h2>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="o">&#39;</span><span class="i">User&#39;</span>
+    <span class="o">@*</span><span class="i">UserId</span>      <span class="c">// PK, User ID</span>
+    <span class="o">!^</span><span class="i">UserName</span>    <span class="c">// Text, Skip</span>
+    <span class="o">*</span><span class="i">Manager_Id</span>   <span class="c">// User ID  </span>
+    <span class="o">^</span><span class="i">Status</span>       <span class="c">// Text</span>
+</pre>
+</td>
+</tr>
+</table>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h3>Gramer for DLS</h3>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+<span class="l">12: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="i">grammar</span> <span class="i">Test</span>;
+
+<span class="i">tables</span>  <span class="o">:</span> <span class="i">table</span><span class="o">+</span> ;
+<span class="i">table</span>   <span class="o">:</span> <span class="i">name</span> <span class="i">cln</span><span class="o">+</span> ;
+<span class="i">name</span>    <span class="o">:</span> <span class="s">&#39;\&#39;&#39;</span> <span class="i">ID</span> <span class="s">&#39;\&#39;&#39;</span> ;
+<span class="i">cln</span>     <span class="o">:</span> <span class="i">att</span> <span class="i">ID</span> ;
+<span class="i">att</span>     <span class="o">:</span> (<span class="i">SKIP</span> | <span class="i">USERID</span> | <span class="i">TEXT</span>)<span class="o">*</span> | ;
+
+<span class="i">ID</span>      <span class="o">:</span> [<span class="i">a</span><span class="o">-</span><span class="i">zA</span><span class="o">-</span><span class="i">Z0</span><span class="o">-</span><span class="n">9</span>]<span class="o">+</span> ;
+<span class="i">SKIP</span>    <span class="o">:</span> [<span class="o">!</span>];
+<span class="i">USERID</span>  <span class="o">:</span> [<span class="o">*</span>];
+<span class="i">TEXT</span>    <span class="o">:</span> [<span class="o">^</span>];
+</pre>
+</td>
+</tr>
+</table>
+
+</section>
+
+<section author="Tony Abell" description="Introduction to ANTLR" theme="night" title="ANTLR" transition="default">
+
+<h3>Compile To Markdown</h3>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="o">&#39;</span><span class="i">tableA&#39;</span>
+<span class="o">------------</span>
+    <span class="o">!</span><span class="i">columnA</span>
+    <span class="i">columnB</span>
+</pre>
+</td>
+</tr>
+</table>
+
+</section>
+
+<section author="Tony Abell" description="Introduction to ANTLR" theme="night" title="ANTLR" transition="default">
+
+<h3>Compile To SQL</h3>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+    <span class="o">/*</span>
+      <span class="i">Table</span> <span class="i">Name</span><span class="o">:</span>         <span class="i">tableA</span>
+      <span class="i">Primary</span> <span class="i">Keys</span><span class="o">:</span>     <span class="i">columnB</span>
+      <span class="i">Parameter</span><span class="o">:</span>
+    <span class="o">*/</span>
+    <span class="i">select</span> <span class="i">columnB</span> <span class="i">from</span> <span class="i">tableA</span>
+</pre>
+</td>
+</tr>
+</table>
+
+</section>
+
+<section author="Tony Abell" description="Introduction to ANTLR" theme="night" title="ANTLR" transition="default">
+
+<h3>Compile To SQL</h3>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+<span class="l">11: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+    <span class="o">/*</span>
+      <span class="i">Table</span> <span class="i">Name</span><span class="o">:</span>         <span class="i">tableA</span>
+      <span class="i">Primary</span> <span class="i">Keys</span><span class="o">:</span>     <span class="i">columnB</span>
+      <span class="i">Parameter</span><span class="o">:</span>        <span class="i">Change</span> <span class="i">Tracking</span> <span class="i">Version</span>
+    <span class="o">*/</span>
+    <span class="i">select</span> <span class="i">columnB</span> <span class="i">from</span>
+    <span class="i">from</span> <span class="i">changetable</span>(<span class="i">changes</span> <span class="i">tableA</span>,<span class="o">?</span>) <span class="i">c</span>
+    <span class="i">left</span> <span class="i">join</span> <span class="i">sys</span><span class="o">.</span><span class="i">dm_tran_commit_table</span> <span class="i">tct</span> <span class="i">on</span>
+        <span class="i">c</span><span class="o">.</span><span class="i">sys_change_version</span> <span class="o">=</span> <span class="i">tct</span><span class="o">.</span><span class="i">commit_ts</span>
+    <span class="i">left</span> <span class="i">join</span> <span class="i">tableA</span> <span class="i">t</span> <span class="k">with</span> (<span class="i">nolock</span>) <span class="i">on</span>  
+        <span class="i">t</span><span class="o">.</span>[<span class="i">columnB</span>] <span class="o">=</span> <span class="i">c</span><span class="o">.</span>[<span class="i">columnB</span>]
+</pre>
+</td>
+</tr>
+</table>
+
+</section>
+
+</section>
+
+<section >
+
+<h3>Resources</h3>
+
+<ul>
+<li><a href="http://javadude.com/articles/antlr3xtut/">ANTLR 3 Tutorial</a></li>
+<li><a href="https://github.com/antlr/grammars-v4">v4 Grammars</a></li>
+<li><a href="http://en.wikipedia.org/wiki/ANTLR">Wiki</a></li>
+<li><a href="http://www.alittlemadness.com/2006/06/05/antlr-by-example-part-1-the-language/">ANTLR By Example</a></li>
+<li><a href="http://www.alexecollins.com/antlr4-and-maven-tutorial/">ANTLR 4 / Maven Tutorial</a></li>
+</ul>
+
+</section>
+
 
 
         </div>

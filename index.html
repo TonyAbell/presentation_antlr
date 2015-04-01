@@ -42,7 +42,41 @@
         <div class="slides">
             <section >
 
-<h3>What is ANTLR?</h3>
+<h3>Why Use DSL?</h3>
+
+<ul>
+<li>Its easier to express ideas in a higher level language</li>
+</ul>
+
+</section>
+
+<section >
+
+<h3>Types of DSL's</h3>
+
+<ul>
+<li>Embedded (internal)
+<ul>
+<li>Resides within syntax of host language</li>
+</ul></li>
+<li>Standalone (external)
+<ul>
+<li>Specialized / Independent syntax</li>
+</ul></li>
+</ul>
+
+</section>
+
+<section >
+
+<h3>DSL Exmaples</h3>
+
+<ul>
+<li>HTML, CSS</li>
+<li>SQL</li>
+<li>ANT, Maven, Make</li>
+<li>Shellbe</li>
+</ul>
 
 </section>
 
@@ -50,7 +84,75 @@
 
 <section >
 
-<h3>Motivation</h3>
+<h3>External Tools</h3>
+
+<ul>
+<li>Antlr</li>
+<li>YACC (Yes Another Complier Compiler)</li>
+</ul>
+
+<p>Uses a formal grammar (DSL) to build</p>
+
+</section>
+
+<section author="Tony Abell" description="Introduction to ANTLR" theme="night" title="ANTLR" transition="default">
+
+<h4>Internal Tools</h4>
+
+<ul>
+<li>Parser Combinators</li>
+<li>Recursive descent parser</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h3>DSL Flow</h3>
+
+<ul>
+<li>Represent ideas in one formate and translate to another
+<ul>
+<li>Compiling to another formate</li>
+<li>Evaluating for results</li>
+</ul></li>
+</ul>
+
+</section>
+
+<section author="Tony Abell" description="Introduction to ANTLR" theme="night" title="ANTLR" transition="default">
+
+<h3>Examples of compilations</h3>
+
+<ul>
+<li>Java -> Byte Code</li>
+<li>Byte Code -> Machine Code</li>
+</ul>
+
+</section>
+
+<section author="Tony Abell" description="Introduction to ANTLR" theme="night" title="ANTLR" transition="default">
+
+<h3>Examples of Evaluation</h3>
+
+<ul>
+<li>Machine Code -> Hello World</li>
+<li>HTML -> Web Page</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h3>Motivation Example</h3>
 
 <p>Manage meta data of Feeder SQL Tables</p>
 
@@ -252,6 +354,70 @@
 
 <section author="Tony Abell" description="Introduction to ANTLR" theme="night" title="ANTLR" transition="default">
 
+<h3>Antlr - Generated Sources</h3>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
+<span class="l">8: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="i">Test</span><span class="o">.</span><span class="i">tokens</span>
+<span class="i">TestBaseListener</span><span class="o">.</span><span class="i">java</span>
+<span class="i">TestBaseVisitor</span><span class="o">.</span><span class="i">java</span>
+<span class="i">TestLexer</span><span class="o">.</span><span class="i">java</span>
+<span class="i">TestLexer</span><span class="o">.</span><span class="i">tokens</span>
+<span class="i">TestListener</span><span class="o">.</span><span class="i">java</span>
+<span class="i">TestParser</span><span class="o">.</span><span class="i">java</span>
+<span class="i">TestVisitor</span><span class="o">.</span><span class="i">java</span>
+</pre>
+</td>
+</tr>
+</table>
+
+</section>
+
+<section author="Tony Abell" description="Introduction to ANTLR" theme="night" title="ANTLR" transition="default">
+
+<h3>Antlr - Tokens</h3>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="i">USERID</span><span class="o">=</span><span class="n">4</span>
+<span class="i">SKIP</span><span class="o">=</span><span class="n">3</span>
+<span class="i">TEXT</span><span class="o">=</span><span class="n">5</span>
+<span class="i">T__0</span><span class="o">=</span><span class="n">1</span>
+<span class="i">ID</span><span class="o">=</span><span class="n">2</span>
+<span class="i">WS</span><span class="o">=</span><span class="n">6</span>
+<span class="s">&#39;\&#39;&#39;</span><span class="o">=</span><span class="n">1</span>  
+</pre>
+</td>
+</tr>
+</table>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
 <h3>Compile To Markdown</h3>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
@@ -337,6 +503,20 @@
 
 </section>
 
+<section author="Tony Abell" description="Introduction to ANTLR" theme="night" title="ANTLR" transition="default">
+
+<h3>Evaluate In Code</h3>
+
+<ul>
+<li>Validate table attributes
+<ul>
+<li>Primary Keys</li>
+<li>Data Types</li>
+</ul></li>
+</ul>
+
+</section>
+
 </section>
 
 <section >
@@ -344,6 +524,7 @@
 <h3>Resources</h3>
 
 <ul>
+<li><a href="http://www.martinfowler.com/bliki/DomainSpecificLanguage.html">Martin Fowler Bliki</a></li>
 <li><a href="http://javadude.com/articles/antlr3xtut/">ANTLR 3 Tutorial</a></li>
 <li><a href="https://github.com/antlr/grammars-v4">v4 Grammars</a></li>
 <li><a href="http://en.wikipedia.org/wiki/ANTLR">Wiki</a></li>
